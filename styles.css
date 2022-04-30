@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Ubuntu:wght@300;400;700&display=swap');
+
+:root {
+    --usage-block-background-color: #69dede;
+    --info-box-color: #316cff;
+    --btn-hover-color: #40c00096;
+    --input-field-color: #d2e7fb;
+    --input-border-color: #26ff00;
+    --main-section-background-color: #282A35;
+    --main-section-background-color-grayish: #616470;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+  }
+
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */
+
+  /* DEVELOPER TOOLS */
+
+* {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+img {
+    height: 130px;
+}
+
+hr {
+    background-color: white;
+}
+
+#navbar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+#main {
+    width: 100%;
+    color: white;
+    display: flex;
+    
+    /* padding: 10px; */
+}
+
+.navbar-left {
+    width: 40%;
+}
+
+.navbar-right {
+    width: 60%;
+    text-align: end;
+    padding: 25px;
+    font-size: 1.3rem;
+}
+
+.navbar-right > p, .navbar-inbox-right > p {
+    font-family: 'Consolas';
+    letter-spacing: 0.2em;
+}
+
+.main-left, .main-right {
+    /* height: 600px; */
+    padding: 50px 15px;
+    background-color: var(--main-section-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-left {
+    width: 40%;
+}
+
+.main-left > p {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.main-right {
+    width: 60%;
+    position: relative;
+}
+
+.h1-welcome {
+    font-size: 3rem;
+    margin-top: 25px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.h3-register {
+    display: block;
+    font-size: 1.5rem;
+    margin: 20px 0 5px;
+}
+.h1-usage-title {
+    font-size: 4rem;
+    color: rgb(33, 33, 33);
+}
+
+.h3-usage-desc {
+    font-size: 2rem;
+    color: rgb(33, 33, 33);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.h2-usage {
+    font-size: 3rem;
+    transition: 1s opacity;
+}
+
+.p-usage-hover {
+    font-size: 1.5rem;
+    padding: 5%;
+}
+
+.split-line {
+    height: 100%;
+    width: 10px;
+    background-color: white;
+}
+
+input, .button, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: var(--input-field-color);
+    transition: box-shadow 0.3s, color 0.3s, background-color 0.3s;
+}
+
+input:focus, .ab:focus {
+    box-shadow:
+    0 0 0 5px var(--main-section-background-color),
+    0 0 0 6px var(--input-border-color); 
+}
+
+input[type=submit], .btn-register, .ab {
+    margin-top: 20px;
+    width: initial;
+    background-color: var(--input-border-color);
+}
+
+.login-submit > input[type=submit] {
+    padding: 12px 12px;
+    width: 75%;
+}
+
+input[type=submit]:hover, input[type=submit]:focus, .ab:focus, .ab:hover {
+    background-color: var(--btn-hover-color);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-register, .btn-forgot-password {
+    border: 2px dashed var(--input-border-color);
+    color: white;
+    min-width: initial!important;
+    margin: 10px 20px;
+    background-color: var(--main-section-background-color)!important;
+    padding: 12px 30px;
+}
+
+.btn-register:hover, .btn-forgot-password:hover {
+    background-color: var(--btn-hover-color)!important;
+    cursor: pointer;
+}
+
+.login-submit {
+    text-align: center;
+}
+
+.register-info, .register-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.register-buttons {
+    width: 75%;
+    padding: 20px 0 0;
+}
+
+.usage {
+    margin-top: 10px;
+    width: 100%;
+    height: 400px;
+    background-color: var(--usage-block-background-color);
+}
+
+.usage-top {
+    padding-top: 25px;
+}
+
+.usage-list {
+    display: flex;
+    height: 400px;
+    margin-top: 25px;
+}
+
+.usage-left, .usage-right {
+    position: relative;
+    text-align: center;
+    width: 50%;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    color: white;
+}
+
+.usage-left {
+    background-image: url(img/user.svg);
+}
+
+.usage-right {
+    background-image: url(img/company.svg);
+}
+
+.usage-hover {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: 1s opacity;
+}
+
+.usage-right:hover > .usage-hover, .usage-left:hover > .usage-hover {
+    opacity: 1;
+}
+
+.usage-right:hover > .h2-usage, .usage-left:hover > .h2-usage {
+    opacity: 0;
+}
+.email-create-info {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 2px dashed var(--usage-block-background-color);
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.login-form {
+    width: 100%;
+}
+
+.login-form > .form-error {
+    color: red;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.new-mail-inputs > .form-error {
+    color: red;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-item {
+    width: 33%;
+}
+
+.navbar-inbox-left {
+    text-align: start;
+}
+
+.navbar-inbox-center {
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 1em;
+}
+
+.navbar-inbox-right {
+    text-align: end;
+    padding: 25px;
+    font-size: 1.3rem;
+}
+
+.main-inbox {
+    display: flex;
+    align-items: stretch;
+    /* margin: 0 25px 0 0; */
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    position: sticky;
+    background-color: var(--main-section-background-color);
+    color: white;
+}
+
+.sidebar-valid-infobox {
+    height: 15%;
+}
+
+.sidebar-valid-infobox-active {
+    height: 15%;
+    background-color: var(--btn-hover-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0 5px;
+}
+
+.sidebar-account {
+    padding: 25px 0 ;
+    text-align: center;
+    border-bottom: 5px solid white;
+    background-color: var(--usage-block-background-color);
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.sidebar-account > img {
+    border-radius: 50%;
+    margin: 15px 0;
+}
+
+.sidebar-account > p:first-of-type {
+    font-size: 2rem;
+}
+
+.sidebar-categories {
+    padding: 15px 0;
+    border-bottom: 5px solid white;
+}
+
+.sidebar-categories > .active {
+    background-color: var(--input-border-color);
+    color: #333;
+}
+
+.sidebar a, .main-inbox-mails a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#navbar a {
+    text-decoration: none;
+    color:rgb(33, 33, 33);
+}
+
+.main-inbox-mails a {
+    padding: 15px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar a:hover:not(.active), .sidebar a:focus:not(.active) {
+    background-color: var(--main-section-background-color-grayish);
+}
+
+.sidebar-account p {
+    width: 100%!important;
+}
+
+.sidebar p {
+    text-align: center;
+    width: 80%;
+}
+
+.sidebar a > p:first-of-type {
+    font-size: 2.5rem;
+    width: 20%;
+    padding: 10px 0 10px 10px;
+    text-align: center;
+}
+
+.sidebar-options {
+    padding: 15px 0;
+}
+
+.main-inbox-mails {
+    background-color: var(--main-section-background-color);
+    background-image: url(img/inbox-background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    max-width: 80%;
+    width: 80%;
+    color: white;
+    height: calc(100vh - 100px);
+}
+
+.main-inbox-mails > table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.main-inbox-mails > table a {
+    display: block;
+}
+
+th {
+    background-color: var(--main-section-background-color-grayish);
+    font-size: 2rem;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    font-size: 1.5rem;
+    /* border-bottom: 1px solid white; */
+}
+
+tr:hover:not(th) {
+    /* outline: 3px groove var(--input-border-color); */
+    box-shadow: 0 0 10px var(--input-border-color);
+    cursor: pointer;
+}
+
+.main-inbox-mails > form {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.h1-new-mail-title {
+    font-size: 3rem;
+    padding: 25px 0 0;
+}
+
+.new-mail-inputs, .new-mail-textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.new-mail-textarea > textarea {
+    width: 50%;
+    min-width: 40ch;
+}
+
+.new-mail-inputs > input {
+    width: 50%;
+    min-width: 32ch;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+textarea {
+    resize: none;
+}
+
+.mail-read {
+    background-color: var(--main-section-background-color-grayish);
+}
+
+.mail-user-section {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--usage-block-background-color);
+}
+
+.mail-rest-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.mail-date {
+    text-align: end;
+    margin-bottom: 75px;
+}
+
+.mail-inside {
+    padding: 0 3%;
+    height: 85%;
+}
+
+.mail-content {
+    margin-top: 50px;
+    font-size: 1.3rem;
+}
+
+.mail-action-buttons {
+    width: 100%;
+    height: 8%;
+}
+
+.mail-action-buttons > form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.mail-action-buttons button {
+    border: none;
+    display: block;
+    width: 20%;
+    height: 100%;
+    color: #333;
+    font-size: 2rem;
+}
+
+.ab {
+    transition: box-shadow 0.3s, color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
